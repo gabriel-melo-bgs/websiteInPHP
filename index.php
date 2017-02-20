@@ -1,17 +1,17 @@
 <?php
+	echo "<title>Why not add a title?!</title>"; 
+	echo "<h1>"."What's up, galera???"."</h1>";//just to try some concatenation
 
-	echo "<h1>"."What's up, galera???"."</h1>";
-	for($i = 0; $i<=10; $i++){
-		if($i == 0)
-		echo "echoing for the 1st time<br>";
-		else if($i == 1)
-		echo "echoing for the 2nd time<br>";
-		else if($i == 2)
-		echo "echoing for the 3rd time<br>";
-		else 
-		echo "echoing for the ".($i+1)."th time<br>";
-	//whithout parentheses, concatenation won't work.($i+1).
-		
+	$myArray = array("1st thing", "2nd thing", "last thing"); //This is wrong!!! $myArray = new array("bla", "bla", "bla");
+	for($i = 0; $i<=10; $i++)
+	{
+		if($i<3){
+
+			echo "<h2>"; //This will be concatenated with the following echo output
+			echo $myArray[$i]."<br>";//just added a little line break using PHP's weird concatenation syntax again
+			echo "</h2>";
+
+		}
 	}
 	
 ?>
