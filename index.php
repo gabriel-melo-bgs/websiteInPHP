@@ -1,32 +1,26 @@
 <?php
 	echo "<title>Why not add a title?!</title>"; 
-	echo "<header><h1>Let's put a <strong>header</strong> here too!</h1></header>"; //It's kind of a title for the page
+	echo "<header>Let's put a <strong>header</strong> here too!</header>"; 
+	//the h1 tag is all bold, by default. So, the strong tag above does not make any difference
+	//when used in the middle of two h1 tags 
 
-	$myArray = array("1st thing", "2nd thing", "last thing"); //The following is wrong $myArray = new array("bla", "bla", "bla");
+	$chordsInCMajor = array('C9' => "C E G B D", 'Dm7/9' => "D F A C E");
+	$chordsInCMajor["Em7"] = "E G B D"; //this is how a new key-value pair is added to the array
+
+	echo "chords array <br/>";
+	foreach ($chordsInCMajor as $chord => $notes) {
+		echo "$chord => $notes <br/>";	
+	}
+
+	$bunchOfNumbers = array(3.14159, 171, 666);
+	$bunchOfNumbers[] = 6.023;
+	$bunchOfNumbers[] = 9.8; //this will add the previous number to the end of the array,
+	//regardless of knowing or not the index where the content would have to be added
+
+	echo "<br/>numbers array <br/>";
+	foreach ($bunchOfNumbers as $index => $content) {
+		echo $bunchOfNumbers[$index]."<br/>";
+	}
 	
-	for($i = 0; $i<=10; $i++)
-	{
-		if($i<count($myArray)){ //I can use the array size instead
-
-			echo "<h2>"; //This will be concatenated with the following echo output
-			echo $myArray[$i]."<br>";//just added a little line break using PHP's weird concatenation syntax again
-			echo "</h2>";
-		}
-	}
-
-	$arr = array("one", "two", "three"); 
-	//which is just like $arr = array(0 => "one", 1 => "two", 2 => "three");
-
-
-	foreach ($arr as $key => $value) { //$arr is just the array in which I'm looping 
-    	echo "Key: $key; Value: $value<br />\n";
-	}
-	echo "<br />\n";
-
-	$chordHash = array('C9' => "C E G D", 'Dm7/9' => "D F A C E");
-
-	foreach ($chordHash as $chord => $notes) {
-		echo "Chord: $chord <br />Notes: $notes <br /><br />";
-	}
 
 ?>
