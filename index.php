@@ -1,6 +1,4 @@
 <?php
-
-	phpinfo();
 	echo "<title>Why not add a title?!</title>"; 
 	echo "<header>Let's put a <strong>header</strong> here too!</header>"; 
 	//the h1 tag is all bold, by default. So, the strong tag above does not make any difference
@@ -28,10 +26,28 @@
 
 	echo "<h4>Food for breakfast</h4>";
 	$i = 1;
-	foreach ($simpleArray as $food) { //this is how I loop through an indexed array
+	foreach ($simpleArray as $food) { //this is how I loop through an indexed array using foreach
 		echo "item $i: $food <br/>";
 		$i++; 
 	}
+
+	//working with csv files
+	//add this to a function later on
+
+	$list = array (
+	    array('aaa', 'bbb', 'ccc', 'dddd'),
+	    array('123', '456', '789'),
+	    array('"aaa"', '"bbb"')
+	);
+
+	$fp = fopen('planilhaMarota.csv', 'w');
+
+	foreach ($list as $fields) {
+	    fputcsv($fp, $fields);
+	}
+
+	fclose($fp);
+
 	
 
 ?>
