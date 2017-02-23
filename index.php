@@ -1,4 +1,6 @@
 <?php
+
+	phpinfo();
 	echo "<title>Why not add a title?!</title>"; 
 	echo "<header>Let's put a <strong>header</strong> here too!</header>"; 
 	//the h1 tag is all bold, by default. So, the strong tag above does not make any difference
@@ -20,6 +22,15 @@
 	echo "<br/>numbers array <br/>";
 	foreach ($bunchOfNumbers as $index => $content) {
 		echo $bunchOfNumbers[$index]."<br/>";
+	}
+
+	$simpleArray = array("bread", "cheese", "milk", "butter", "ham", "cantalopes");
+
+	echo "<h4>Food for breakfast</h4>";
+	$i = 1;
+	foreach ($simpleArray as $food) { //this is how I loop through an indexed array
+		echo "item $i: $food <br/>";
+		$i++; 
 	}
 	
 
